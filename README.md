@@ -13,7 +13,7 @@ Last Gama Academy(**xp13**) assignment
 2. Type the following command on your terminal:
 > ng serve
 
-## Bibliotecas de Front-end externas:
+## Front-end external libs:
  - @angular/animations
  - @angular/material
  - @angular/cdk
