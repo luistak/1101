@@ -1,18 +1,17 @@
-# 1101
-Projeto final do Gama Experience 13
+# Event Helper
+Last Gama Academy(**xp13**) assignment
 
-## Utilização
+## Utilization
 
-### Utilizando um componente do Material Angular
-Link oficial da documentação: 
-> https://material.angular.io/components/categories
-Link de um tutorial utilizando a biblioeca:
-> https://www.youtube.com/watch?v=Q6qhzG7mObU
-Obs: esta é uma biblioteca oficial do angular, a documentação dela está muito descritiva.
+### Installing dependencies
+1. Access the directory: **/gama**
+2. Type the following command on your terminal:
+> npm install
 
-**Como utilizar**
-1. Adicione o componente no módulo de componentes do material **app/material/material.module.ts**, tanto no imports quanto exports
-2. Basta utilizar assim como no exemplo dentro de **app/app.component.html**
+### Runing the server on your local machine
+1. Access the directory: **/gama**
+2. Type the following command on your terminal:
+> ng serve
 
 ## Bibliotecas de Front-end externas:
  - @angular/animations
