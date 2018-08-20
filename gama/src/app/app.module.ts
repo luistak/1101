@@ -8,6 +8,9 @@ import { IndexComponent } from './pages/index/index.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MainNavComponent } from './shared/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,19 @@ import { FooterComponent } from './shared/footer/footer.component';
     IndexComponent,
     Error404Component,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
