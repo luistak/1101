@@ -1,2 +1,6 @@
 /* Material theme import */
 @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+body{
+    margin:0;
+}
