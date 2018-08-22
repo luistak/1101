@@ -12,6 +12,8 @@ import {
 
 import {MatIconModule} from '@angular/material/icon';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
+
 
 @NgModule({
   imports: [
@@ -20,7 +22,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatJumbotronModule
   ],
   exports: [
     CommonModule,
@@ -31,7 +34,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatIconModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatJumbotronModule
   ]
 })
 export class MaterialModule { }
