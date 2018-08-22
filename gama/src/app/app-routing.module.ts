@@ -11,15 +11,13 @@ const routes: Routes = [
     component: IndexComponent
   },
   {
-    path: '**',
-    component: Error404Component
+    path: 'tarefas',
+    component: TodoListComponent
   },
   {
-    path:'tarefas',
-    pathMatch: 'full',
-    component: TodoListComponent,
-  },
- 
+    path: '**',
+    component: Error404Component
+  } 
 ];
 
 @NgModule({
