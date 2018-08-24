@@ -1,5 +1,5 @@
 .container {
-  max-width: 1300px;
+  max-width: 700px;
   margin: auto;
 }
 
@@ -9,7 +9,15 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
+  background-image: url(../../../assets/backgorund.jpg);
+  width: 100%;
+  background-size: cover;
 }
+.logo img{
+  position: relative;
+  width: 204px;
+  height: 86px;
+  }
 
 .content {
   min-width: 70%;
@@ -28,3 +36,14 @@ section {
     background-color: #fff;
   }
 }
+
+@media (max-width: 600px) {
+  .logo img{
+    width: 160px;
+    height: 65px;
+    }
+  .title h4{
+    font-size: 20px;
+  }
+}
+
