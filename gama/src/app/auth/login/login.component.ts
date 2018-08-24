@@ -1,7 +1,5 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from 'firebase';
-
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,18 +8,58 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    this.authService.loginWithGoogle().subscribe(
+      (res: boolean) => {
+        if (!res) {
+          alert(this.authService.errorMessage);
+          return;
+        }
+
+        this.router.navigate(['/tarefas'], { skipLocationChange: true });
+      },
+      (error) => {
+        console.error(error);
+        alert('Oops :( aconteceu algo inesperado, tente novamente mais tarde!');
+      }
+    );
   }
 
   logout() {
-    this.afAuth.auth.signOut();
-  }
-  ngOnInit() {
+    this.authService.logout().subscribe(
+      (res: boolean) => {
+        // In case user is already logged in
+        if (res) {
+          alert('Deslogou');
+          return;
+        }
+        alert('Ainda logado');
+      },
+      (error) => {
+        console.error(error);
+        alert(error);
+      }
+    );
   }
 
+  ngOnInit() {
+    // this.checkLoggedUser();
+  }
+
+  checkLoggedUser() {
+    this.authService.userLogged.subscribe(
+      (res: boolean) => {
+        // In case user is already logged in
+        if (res) {
+          this.router.navigate(['/tarefas']);
+        }
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 }
