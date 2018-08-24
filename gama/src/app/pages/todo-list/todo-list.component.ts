@@ -14,27 +14,28 @@ export class TodoListComponent implements OnInit {
     this.dataBaseService.getTodoList().snapshotChanges()
     .subscribe(item => {
       this.toDoListArray = [];
-      item.forEach(element => {
-        var x = element.payload.toJSON();
-        x["$key"] = element.key;
+      item.forEach (element => {
+        const x = element.payload.toJSON();
+        x['$key'] = element.key;
         this.toDoListArray.push(x);
-      })
+      });
 
-      this.toDoListArray.sort((a, b) =>{
+      this.toDoListArray.sort((a, b) => {
         return a.isChecked - b.isChecked;
-      })
+      });
     });
   }
 
-  onAdd(itemTask){
+  onAdd(itemTask) {
     this.dataBaseService.addTask(itemTask.value);
     itemTask.value = null;
   }
 
-  alterCheck($key: string,isChecked) {
-    this.dataBaseService.checkOrUnCheckTask($key,!isChecked);
+  alterCheck($key: string, isChecked) {
+    this.dataBaseService.checkOrUnCheckTask($key, !isChecked);
   }
-  onDelete($key : string){
+
+  onDelete($key: string) {
     this.dataBaseService.removeTask($key);
   }
 
