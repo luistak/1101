@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
         // In case user is already logged in
         if (res) {
           this.zone.run(() => {
-            alert('Opa!, usuário já está logado então vamos para a página inicial!');
             this.router.navigate(['/tarefas']);
           });
         }
