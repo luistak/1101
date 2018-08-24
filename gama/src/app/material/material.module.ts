@@ -8,8 +8,12 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatListModule,
+<<<<<<< HEAD
   MatStepperModule,
   MatFormFieldModule,
+=======
+  MatMenuModule
+>>>>>>> a0cd63573c241e39381321ed3778e1a77e4970c9
 } from '@angular/material';
 
 import {MatIconModule} from '@angular/material/icon';
@@ -26,8 +30,12 @@ import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
     MatToolbarModule,
     MatIconModule,
     MatJumbotronModule,
+<<<<<<< HEAD
     MatStepperModule,
     MatFormFieldModule
+=======
+    MatMenuModule
+>>>>>>> a0cd63573c241e39381321ed3778e1a77e4970c9
   ],
   exports: [
     CommonModule,
@@ -40,8 +48,12 @@ import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
     MatSidenavModule,
     MatListModule,
     MatJumbotronModule,
+<<<<<<< HEAD
     MatStepperModule,
     MatFormFieldModule
+=======
+    MatMenuModule
+>>>>>>> a0cd63573c241e39381321ed3778e1a77e4970c9
   ]
 })
 export class MaterialModule { }

@@ -13,6 +13,8 @@ import { IndexComponent } from './pages/index/index.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { MainNavComponent } from './shared/main-nav/main-nav.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { SignUpComponent } from './pages/signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { EventsComponent } from './pages/events/events.component';
 
@@ -23,12 +25,19 @@ import { EventsComponent } from './pages/events/events.component';
     Error404Component,
     MainNavComponent,
     TodoListComponent,
+<<<<<<< HEAD
     LoginComponent,
     EventsComponent
+=======
+    SignUpComponent,
+    LoginComponent
+>>>>>>> a0cd63573c241e39381321ed3778e1a77e4970c9
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),

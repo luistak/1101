@@ -1,14 +1,17 @@
-<div class="jumbotron">
-    <h4 class="text-center">Listar Tarefas</h4>
+<app-main-nav></app-main-nav>
+
+<section>
+  <div class="jumbotron">
+      <h4 class="text-center">Listar Tarefas</h4>
   </div>
-  
+
   <div class="input-group col-12 col-md-6 offset-md-3">
     <input style="z-index:0;" type="text" class="form-control" #itemTask>
     <div class="input-group-addon hover-cursor" (click)="onAdd(itemTask)">
       <i class="fa fa-plus-circle fa-2x"></i>
     </div>
   </div>
-  
+
   <div class="task">
     <ul class="list-group col-12 col-md-6 offset-md-3 pl-3">
       <li class="list-group-item" *ngFor="let item of toDoListArray">
@@ -22,3 +25,4 @@
       </li>
     </ul>
   </div>
+</section>
