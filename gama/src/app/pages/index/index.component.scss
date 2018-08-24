@@ -1,6 +1,7 @@
 .container {
   max-width: 700px;
   margin: auto;
+  padding: 0;
 }
 
 section {
@@ -12,6 +13,9 @@ section {
   background-image: url(../../../assets/backgorund.jpg);
   width: 100%;
   background-size: cover;
+  @media (max-width: 991px) {
+    position: initial;
+  }
 }
 .logo img{
   position: relative;
@@ -22,7 +26,7 @@ section {
 .content {
   min-width: 70%;
   background-color: #1d3449;
-  div {
+  > div {
     width: 50%;
     float: left;
     @media (max-width: 991px) {
