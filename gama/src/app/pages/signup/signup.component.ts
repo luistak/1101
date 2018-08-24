@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { NewUser } from "./new-user";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NewUser } from './new-user';
 
 @Component({
     templateUrl: './signup.component.html',
@@ -11,17 +11,17 @@ export class SignUpComponent implements OnInit {
 
     signupForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder){}
-    ngOnInit(): void{
+    constructor(private formBuilder: FormBuilder) {}
+    ngOnInit(): void {
         this.signupForm = this.formBuilder.group({
-            fullName: ['', 
+            fullName: ['',
                 [
                     Validators.required,
                     Validators.minLength(2),
                     Validators.maxLength(40)
                 ]
             ],
-            userName: ['', 
+            userName: ['',
                 [
                     Validators.required,
                     Validators.pattern(/^[a-z0-9_\-]+$/),
@@ -29,13 +29,13 @@ export class SignUpComponent implements OnInit {
                     Validators.maxLength(30)
                 ]
             ],
-            email: ['', 
+            email: ['',
                 [
                     Validators.required,
                     Validators.email
                 ]
             ],
-            password: ['', 
+            password: ['',
                 [
                     Validators.required,
                     Validators.minLength(8),
@@ -45,7 +45,7 @@ export class SignUpComponent implements OnInit {
         });
     }
 
-    signup(){
+    signup() {
         const newUser = this.signupForm.getRawValue() as NewUser;
     }
 }
