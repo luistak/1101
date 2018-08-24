@@ -5,6 +5,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { SignUpComponent } from './pages/signup/signup.component';
+import { UserAuthenticatedGuard } from './auth/user-authenticated.guard';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'tarefas',
+    canActivate: [UserAuthenticatedGuard],
     component: TodoListComponent
   },
   {
