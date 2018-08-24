@@ -1,0 +1,30 @@
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+section {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  min-width: 70%;
+  background-color: #1d3449;
+  div {
+    width: 50%;
+    float: left;
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+  .info {
+    color: #fff;
+  }
+  .login {
+    background-color: #fff;
+  }
+}
