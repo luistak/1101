@@ -4,12 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { SignUpComponent } from './pages/signup/signup.component';
 import { UserAuthenticatedGuard } from './auth/user-authenticated.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: IndexComponent
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent
   },
   {
     path: 'tarefas',
