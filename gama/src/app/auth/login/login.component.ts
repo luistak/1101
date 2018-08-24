@@ -24,23 +24,6 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  logout() {
-    this.authService.logout().subscribe(
-      (res: boolean) => {
-        // In case user is already logged in
-        if (res) {
-          alert('Deslogou');
-          return;
-        }
-        alert('Ainda logado');
-      },
-      (error) => {
-        console.error(error);
-        alert(error);
-      }
-    );
-  }
-
   ngOnInit() {
     this.checkLoggedUser();
   }
