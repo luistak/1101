@@ -25,13 +25,10 @@ import { EventsComponent } from './pages/events/events.component';
     Error404Component,
     MainNavComponent,
     TodoListComponent,
-<<<<<<< HEAD
     LoginComponent,
-    EventsComponent
-=======
+    EventsComponent,
     SignUpComponent,
     LoginComponent
->>>>>>> a0cd63573c241e39381321ed3778e1a77e4970c9
   ],
   imports: [
     BrowserModule,
