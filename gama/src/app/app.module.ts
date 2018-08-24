@@ -12,6 +12,8 @@ import { IndexComponent } from './pages/index/index.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { MainNavComponent } from './shared/main-nav/main-nav.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { SignUpComponent } from './pages/signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,11 +22,14 @@ import { TodoListComponent } from './pages/todo-list/todo-list.component';
     IndexComponent,
     Error404Component,
     MainNavComponent,
-    TodoListComponent
+    TodoListComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
