@@ -1,5 +1,5 @@
 import { AuthService } from './../auth.service';
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,18 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {
-  }
+  constructor(private authService: AuthService, private router: Router, public zone: NgZone) {}
 
   login() {
     this.authService.loginWithGoogle().subscribe(
       (res: boolean) => {
-        if (!res) {
-          alert(this.authService.errorMessage);
-          return;
+        if (res) {
+          this.zone.run(() => { this.router.navigate(['/tarefas']); });
         }
-
-        this.router.navigate(['/tarefas'], { skipLocationChange: true });
       },
       (error) => {
         console.error(error);
@@ -46,15 +42,18 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.checkLoggedUser();
+    this.checkLoggedUser();
   }
 
   checkLoggedUser() {
-    this.authService.userLogged.subscribe(
+    this.authService.userLoggedSubscription.subscribe(
       (res: boolean) => {
         // In case user is already logged in
         if (res) {
-          this.router.navigate(['/tarefas']);
+          this.zone.run(() => {
+            alert('Opa!, usuário já está logado então vamos para a página inicial!');
+            this.router.navigate(['/tarefas']);
+          });
         }
       },
       (error) => {

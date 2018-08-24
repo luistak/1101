@@ -7,27 +7,31 @@ import { Observable, from, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  loggedIn = false;
   user: any = null;
   errorMessage: String = '';
-  userLogged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  userLoggedSubscription: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(public afAuth: AngularFireAuth) {
+    this.userLoggedSubscriptionListener();
     this.user = this.afAuth.auth.currentUser;
-    if (!this.user) {
-      this.userLogged.next(false);
-      return;
-    }
-
-    this.userLogged.next(true);
   }
 
   getUser() {
-    if (!this.isLoggedIn()) {
-      return null;
-    }
-
     return this.user;
+  }
+
+  userLoggedSubscriptionListener() {
+    this.afAuth.auth.onAuthStateChanged(
+      (user) => {
+        if (user) {
+          this.user = user;
+          this.userLoggedSubscription.next(true);
+        } else {
+          this.user = null;
+          this.userLoggedSubscription.next(false);
+        }
+      }
+    );
   }
 
   loginWithGoogle(): Observable<boolean> {
@@ -40,14 +44,9 @@ export class AuthService {
           }
 
           this.user = res.user;
-          this.loggedIn = true;
-          this.userLogged.next(true);
-
           return true;
         },
         (error) => {
-          this.loggedIn = false;
-
           let message = 'Oops, parece que houve um erro inesperado :( tente novamente mais tarde';
           switch (error) {
             case 'auth/account-exists-with-different-credential':
@@ -74,9 +73,7 @@ export class AuthService {
           }
 
           this.user = null;
-          this.loggedIn = false;
           this.errorMessage = message;
-          this.userLogged.next(false);
 
           return false;
         }
@@ -100,6 +97,6 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return this.loggedIn;
+    return this.user ? true : false;
   }
 }
