@@ -1,31 +1,62 @@
 <div class="container">
-  <div class="row text-center">
+  <div class="row">
       <div class="col-10 offset-1 col-md-6 offset-md-3 mt-5 event">
-          <form>
-              <div>
-                <h2 class="title">Dados do Evento</h2>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome do evento">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Local">
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" id="formGroupExampleInput2" 
-                  placeholder="Capacidade máxima de pblico">
-              </div>
-              <div class="form-group">
-                  <input type="text" class="form-control" id="formGroupExampleInput2" 
-                  placeholder="Data">
-              </div>
-              <div class="">
-                <p>Você quer calcular a estimativa de:</p>
-                <label ><input type="checkbox" value="">Visibilidade</label> <br>
-                <label class="pr-2"><input type="checkbox" value="">Retorno financeiro</label>
-              </div>
-              <button type="button" class="btn btn-primary btn-lg btn-block">Proxima etapa</button>
-            </form>
+          <mat-horizontal-stepper>
+              <mat-step label="Dados do Evento">
+                  <div class="form-group">
+                      <input type="text" class="form-control" 
+                         placeholder="Nome do evento">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" 
+                         placeholder="Local">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                          placeholder="Capacidade máxima de pblico">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                         placeholder="Data">
+                    </div>
+                    <div class="">
+                      <p>Você quer calcular a estimativa de:</p>
+                      <label ><input type="checkbox" value="">Visibilidade</label> <br>
+                      <label class="pr-2"><input type="checkbox" value="">Retorno financeiro</label>
+                    </div>
+                    <button matStepperNext type="button" class="btn btn-primary btn-lg btn-block">Proxima etapa</button>
+              </mat-step>
+              <mat-step label="Recursos">
+                  <div class="form-group">
+                      <input type="text" class="form-control" 
+                         placeholder="Orçamento">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" 
+                         placeholder="Patrocínio">
+                    </div>
+                    <button matStepperNext type="button" class="btn btn-primary btn-lg btn-block">Proxima etapa</button>
+              </mat-step>
+              <mat-step label="Custos">
+                  <div class="form-group">
+                      <input type="text" class="form-control" 
+                         placeholder="Estrutura">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" 
+                         placeholder="Atrações">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                           placeholder="Divulgação e Marketing">
+                      </div>
+                    <button matStepperNext type="button" class="btn btn-primary btn-lg btn-block">Proxima etapa</button>
+              </mat-step>
+              <mat-step label="Nome do Evento">
+
+              <button matStepperNext type="button" class="btn btn-primary btn-lg btn-block">Concluir</button>
+              </mat-step>
+            </mat-horizontal-stepper>
       </div>
   </div>
 </div>
