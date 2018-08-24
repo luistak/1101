@@ -13,18 +13,18 @@ export class DatabaseService {
     return this.toDolist;
   }
 
-  addTask(task: string){
+  addTask(task: string) {
     this.toDolist.push({
       task: task,
       isChecked: false
     });
   }
 
-  checkOrUnCheckTask($key: string, flag: boolean){
+  checkOrUnCheckTask($key: string, flag: boolean) {
     this.toDolist.update($key, { isChecked: flag});
   }
 
-  removeTask($key: string){
+  removeTask($key: string) {
     this.toDolist.remove($key);
   }
 }
