@@ -1,0 +1,80 @@
+<div class="container-fluid pt-5">
+  <div class="row">
+      <div class="col-md-6 mx-auto">
+              <div class="card card-body">
+                  <h3 class="text-center mb-4">Cadastre-se</h3>
+                  <form [formGroup]="signupForm" (submit)="signup()">
+                      <div class="form-group">
+                          <input formControlName="fullName" class="form-control input-lg"
+                          placeholder="Nome Completo" name="fullName" type="text">
+
+                          <small *ngIf="signupForm.get('fullName').errors?.required && signupForm.get('fullName').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário preencher o nome
+                          </small>
+                          <small *ngIf="signupForm.get('fullName').errors?.minlength && signupForm.get('fullName').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário no mínimo 2 caracteres no nome
+                          </small>
+                          <small *ngIf="signupForm.get('fullName').errors?.maxlength && signupForm.get('fullName').touched"
+                                  class="text-danger d-block mt-2">
+                                  Só é permitido no máximo 40 caracteres no nome
+                          </small>
+                      </div>
+                      <div class="form-group">
+                          <input formControlName="userName" class="form-control input-lg"
+                          placeholder="Usuário" name="userName" type="text">
+
+                          <small *ngIf="signupForm.get('userName').errors?.required && signupForm.get('userName').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário preencher o usuário
+                          </small>
+                          <small *ngIf="signupForm.get('userName').errors?.minlength && signupForm.get('userName').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário no mínimo 4 caracteres no usuário
+                          </small>
+                          <small *ngIf="signupForm.get('userName').errors?.maxlength && signupForm.get('userName').touched"
+                                  class="text-danger d-block mt-2">
+                                  Só é permitido no máximo 30 caracteres no nome
+                          </small>
+                      </div>
+                      <div class="form-group">
+                          <input formControlName="email" class="form-control input-lg"
+                          placeholder="E-mail" name="email" type="email">
+
+                          <small *ngIf="signupForm.get('email').errors?.required && signupForm.get('email').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário preencher o email
+                          </small>
+                          <small *ngIf="signupForm.get('email').errors?.email && signupForm.get('email').touched"
+                                  class="text-danger d-block mt-2">
+                                  Insira um email válido!
+                          </small>
+                      </div>
+                      <div class="form-group has-success">
+                          <input formControlName="password" class="form-control input-lg"
+                          placeholder="Senha" name="password" value="" type="password">
+
+                          <small *ngIf="signupForm.get('password').errors?.required && signupForm.get('password').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário preencher a senha
+                          </small>
+                          <small *ngIf="signupForm.get('password').errors?.minlength && signupForm.get('password').touched"
+                                  class="text-danger d-block mt-2">
+                                  É necessário no mínimo 4 caracteres no senha
+                          </small>
+                          <small *ngIf="signupForm.get('password').errors?.maxlength && signupForm.get('password').touched"
+                                  class="text-danger d-block mt-2">
+                                  Só é permitido no máximo 30 caracteres na senha
+                          </small>
+                      </div>
+                      <input [disabled]="signupForm.invalid" class="btn btn-lg btn-primary btn-block"
+                      value="Cadastre-se" type="submit">
+                      <div class="pt-2">
+                          <p>Já é um usuario?<a [routerLink]="['']"> Login!</a></p>
+                      </div>
+                  </form>
+              </div>
+      </div>
+  </div>
+</div>
