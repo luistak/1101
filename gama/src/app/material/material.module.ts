@@ -8,6 +8,8 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatListModule,
+  MatStepperModule,
+  MatFormFieldModule,
   MatMenuModule
 } from '@angular/material';
 
@@ -25,7 +27,9 @@ import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
     MatToolbarModule,
     MatIconModule,
     MatJumbotronModule,
-    MatMenuModule
+    MatStepperModule,
+    MatFormFieldModule,
+    MatMenuModule,
   ],
   exports: [
     CommonModule,
@@ -38,7 +42,9 @@ import { MatJumbotronModule } from '@angular-material-extensions/jumbotron';
     MatSidenavModule,
     MatListModule,
     MatJumbotronModule,
-    MatMenuModule
+    MatStepperModule,
+    MatFormFieldModule,
+    MatMenuModule,
   ]
 })
 export class MaterialModule { }

@@ -1,6 +1,7 @@
 .container {
-  max-width: 1300px;
+  max-width: 700px;
   margin: auto;
+  padding: 0;
 }
 
 section {
@@ -9,12 +10,23 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
+  background-image: url(../../../assets/backgorund.jpg);
+  width: 100%;
+  background-size: cover;
+  @media (max-width: 991px) {
+    position: initial;
+  }
 }
+.logo img{
+  position: relative;
+  width: 204px;
+  height: 86px;
+  }
 
 .content {
   min-width: 70%;
   background-color: #1d3449;
-  div {
+  > div {
     width: 50%;
     float: left;
     @media (max-width: 991px) {
@@ -28,3 +40,14 @@ section {
     background-color: #fff;
   }
 }
+
+@media (max-width: 600px) {
+  .logo img{
+    width: 160px;
+    height: 65px;
+    }
+  .title h4{
+    font-size: 20px;
+  }
+}
+

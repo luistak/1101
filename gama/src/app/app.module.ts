@@ -16,6 +16,7 @@ import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { SignUpComponent } from './pages/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
+import { EventsComponent } from './pages/events/events.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { LoginComponent } from './auth/login/login.component';
     Error404Component,
     MainNavComponent,
     TodoListComponent,
+    LoginComponent,
+    EventsComponent,
     SignUpComponent,
     LoginComponent
   ],
